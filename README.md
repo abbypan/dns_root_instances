@@ -12,7 +12,7 @@ To address this problem, RFC7706 is the most recommend, Root Servers by Running 
 
 But if the resolvers don't want to "run Root on Loopback" when they encounter any root anycast BGP route unstable issue like "Iran leaks", as an alternative rescue solution, we can give a official suggest Root Instances List, with unicast IP addresses.
 
-Resolvers can temporarily switch to send root queries to the unicast IP addresses in rescue time. After the unstable issue is over, return to the default anycast db.hint.
+Resolvers can temporarily switch to send root queries to the unicast IP addresses in rescue time. After the unstable issue is over, return to the default anycast root hint file.
 
 Root Instances List 
 * To satisify different geolocation, it can be configured to target different countries.
