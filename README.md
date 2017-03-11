@@ -88,4 +88,4 @@ to be continue.
 
 # Acknowledgements
 
-Thanks for helpful comments and suggestion from John Bond.
+Thanks for helpful comments and suggestions from John Bond.
