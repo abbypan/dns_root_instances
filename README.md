@@ -60,7 +60,7 @@ db.cache is from http://www.internic.net/domain/db.cache
 
 ## use file
 
-    perl root_instances_file.pl [type] [root_label] [country]
+    perl root_instances_file.pl [type] [accident_root_label] [country]
 
 Generate default anycast db.root
 
