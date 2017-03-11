@@ -45,7 +45,12 @@ configure country.root-instances.net, take china for example :
     pek2a.f.root-servers.org. 3600    IN    A    203.119.85.5
     pek2b.f.root-servers.org. 3600    IN    A    203.119.85.6
 
-# usage
+# Install
+
+    cpan File::Copy
+    cpan File::Slurp
+
+# Usage
 
 Take bind for example. 
 
