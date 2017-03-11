@@ -1,0 +1,3 @@
+country,root,instances,ttl,rrtype,rr
+cn,f,pek2a.f.root-servers.org.,3600,A,203.119.85.5
+cn,f,pek2b.f.root-servers.org.,3600,A,203.119.85.6
