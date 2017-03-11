@@ -58,7 +58,7 @@ Generate rescue db.root file, copy to /etc/bind directory, restart bind.
 
 db.cache is from http://www.internic.net/domain/db.cache
 
-## use file
+## text file
 
     perl root_instances_file.pl [type] [accident_root_label] [country]
 
@@ -81,3 +81,7 @@ Generate rescue unicast db.root for L-root in China
     > pek2a.f.root-servers.org.     3600       A        203.119.85.5      
     > .                             86400      NS       pek2b.f.root-servers.org.
     > pek2b.f.root-servers.org.     3600       A        203.119.85.6      
+
+## dns rr
+
+to be continue.
