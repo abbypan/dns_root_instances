@@ -19,7 +19,7 @@ Root Instances List
 * Not need to give all instances in one country, just a relatively stable recommend root instances unicast sublist.
 * Must be updated periodly, for example, updated every year. Most of time, root instance's unicast IP address does not change as frequent as CDN business such as YTB.
 
-This is not to add any "auto detect logic at resolover", totally on operator's manual choice. 
+This is not to add any "auto detect logic at resolover", totally on operator's manual rescue choice. 
 
 # Install
 
