@@ -21,7 +21,7 @@ Root Instances List
 
 This is not to add any "auto detect logic at resolover", totally on operator's manual rescue choice. 
 
-**More details were discussed with John Bond at RSSAC-Caucus-Anycast-WP Group D, Security**
+More details at RSSAC-Caucus-Anycast-WP Group D, Security mail list.
 
 # Install
 
