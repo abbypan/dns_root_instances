@@ -21,36 +21,12 @@ Root Instances List
 
 This is not to add any "auto detect logic at resolover", totally on operator's choice. 
 
-# How to spread the Root Instances List
-
-## text file
-
-like [db.cache](http://www.internic.net/domain/db.cache), we can give an online http text file.
-
-For example, [root_instances.csv](root_instances.csv).
-
-## dns rr
-
-configure country.root-instances.net, take china for example : 
-
-    ;; QUESTION SECTION:
-    ;cn.root-instances.net.                    IN      NS
-
-    ;; AUTHORITY SECTION:
-    cn.root-instances.net.       86400     IN      NS       pek2a.f.root-servers.org.
-    cn.root-instances.net.       86400     IN      NS       pek2b.f.root-servers.org.
-
-
-    ;; ADDITIONAL SECTION:
-    pek2a.f.root-servers.org. 3600    IN    A    203.119.85.5
-    pek2b.f.root-servers.org. 3600    IN    A    203.119.85.6
-
 # Install
 
     cpan File::Copy
     cpan File::Slurp
-
-# Usage
+    
+# How to spread the Root Instances List
 
 Take bind for example. 
 
@@ -58,7 +34,11 @@ Generate rescue db.root file, copy to /etc/bind directory, restart bind.
 
 db.cache is from http://www.internic.net/domain/db.cache
 
-## text file
+## root instances text file
+
+like [db.cache](http://www.internic.net/domain/db.cache), we can give an online http text file.
+
+For example, [root_instances.csv](root_instances.csv).
 
     perl root_instances_file.pl [type] [accident_root_label] [country]
 
@@ -82,7 +62,22 @@ Generate rescue unicast db.root for L-root in China
     > .                             86400      NS       pek2b.f.root-servers.org.
     > pek2b.f.root-servers.org.     3600       A        203.119.85.6      
 
-## dns rr
+## root instances dns rr
+
+configure country.root-instances.net, take china for example : 
+
+    ;; QUESTION SECTION:
+    ;cn.root-instances.net.                    IN      NS
+
+    ;; AUTHORITY SECTION:
+    cn.root-instances.net.       86400     IN      NS       pek2a.f.root-servers.org.
+    cn.root-instances.net.       86400     IN      NS       pek2b.f.root-servers.org.
+
+
+    ;; ADDITIONAL SECTION:
+    pek2a.f.root-servers.org. 3600    IN    A    203.119.85.5
+    pek2b.f.root-servers.org. 3600    IN    A    203.119.85.6
+
 
 to be continue.
 
