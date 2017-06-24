@@ -4,22 +4,15 @@ use warnings;
 use File::Copy;
 use File::Slurp qw/read_file write_file/;
 
-my ($action, $root_label, $country) = @ARGV;
+my ($country) = @ARGV;
 
 #db.cache is from http://www.internic.net/domain/db.cache
 
 #system("wget http://www.internic.net/domain/db.cache -O db.cache");
-my @lines = read_file('db.cache');
 
-if($action eq 'anycast'){
-    #default
-}elsif($action eq 'unicast'){
-    exit unless($root_label=~/^[a-m]$/i);
-    @lines = grep { ! /$root_label\.ROOT-SERVERS\.NET\./i } @lines;
-    push @lines, generate_country_lines($country);
-}
+my @lines = $country ?  generate_country_lines($country) : read_file('db.cache');
 
-write_file('db.root', @lines);
+write_file('db.root', join("\n", @lines));
 
 sub generate_country_lines {
     my ($country) = @_;
@@ -29,11 +22,10 @@ sub generate_country_lines {
 
     my @select_c = map { chomp; [ split /,/ ]  } grep { /^$country,/i } @c;
     return () unless(@select_c);
-    
+
     my @add_lines = map { 
-qq[.                             86400      NS       $_->[2]
-$_->[2]     $_->[3]       $_->[4]        $_->[5]      
-]    
-} @select_c;
+    qq[.                                86400      NS       $_->[1]
+$_->[1]     $_->[2]       $_->[3]        $_->[4]]    
+    } @select_c;
     return @add_lines;
 }
